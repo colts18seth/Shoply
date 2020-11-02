@@ -14,9 +14,10 @@ const INITIAL_STATE = {
 function rootReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case ADD:
-            return {}
+            return { ...state, cart: { ...state.cart, ...action.item } }
         case REMOVE:
-            return {}
+            let newState = state.cart.filter(item => action.key !== item.key);
+            return { ...state, cart: { newState } }
         default:
             return state;
     }
