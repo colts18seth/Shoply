@@ -1,0 +1,5 @@
+.Item {
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px #5e5e5e;
+}
