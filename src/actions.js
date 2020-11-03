@@ -7,9 +7,9 @@ export function add(item) {
     };
 }
 
-export function remove(key) {
+export function remove(item) {
     return {
         type: REMOVE,
-        key
+        item
     };
 }

@@ -19,8 +19,11 @@ function rootReducer(state = INITIAL_STATE, action) {
                 ...state, cart: { ...state.cart, [name]: { ...action.item } }
             }
         case REMOVE:
-            let newState = state.cart.filter(item => action.key !== item.key);
-            return { ...state, cart: { newState } }
+            if (state.cart.hasOwnProperty(action.item.data.name)) {
+                console.log("included")
+                delete state.cart[action.item.data.name];
+            }
+            return { ...state, cart: { ...state.cart } }
         default:
             return state;
     }
