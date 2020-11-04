@@ -1,7 +1,7 @@
 import Item from './Item';
 import { v4 as uuid } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { add, remove } from './actions';
+import { add, remove, increment, decrement } from './actions';
 import './ItemList.css';
 
 function ItemsList() {
@@ -11,6 +11,8 @@ function ItemsList() {
 
     const addToCart = (item) => dispatch(add(item));
     const removeFromCart = (item) => dispatch(remove(item));
+    const incrementCount = (item) => dispatch(increment(item));
+    const decrementCount = (item) => dispatch(decrement(item));
 
     return (
         <div className="ItemsList container mt-5">
@@ -18,7 +20,7 @@ function ItemsList() {
                 {data.map(item =>
                     (
                         <div key={uuid()} className="col-4 p-2">
-                            <Item item={item} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+                            <Item item={item} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} incrementCount={incrementCount} decrementCount={decrementCount} />
                         </div>
                     )
                 )}

@@ -1,12 +1,12 @@
 import Header from './Header';
-import ItemsList from './ItemsList';
+import Routes from './Routes';
 import './App.css';
 
 function App() {
     return (
         <div className="App">
             <Header />
-            <ItemsList />
+            <Routes />
         </div>
     );
 }
